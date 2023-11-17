@@ -15,7 +15,7 @@ public class ServiceDemo {
     private final PostRepo postRepo;
 
     public void demo() {
-        Post postLazy = postRepo.getById(1L);
+        Post postLazy = postRepo.findById(1L).orElseThrow();
         System.out.println("Post title: " + postLazy.getTitle());
 
         boolean isCommentsInitialized = Hibernate.isInitialized(postLazy.getComments());
