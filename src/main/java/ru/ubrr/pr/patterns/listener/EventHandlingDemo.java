@@ -1,4 +1,4 @@
-package ru.ubrr.pr.listener;
+package ru.ubrr.pr.patterns.listener;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
