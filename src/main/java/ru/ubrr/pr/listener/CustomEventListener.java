@@ -1,4 +1,4 @@
-package ru.ubrr.pr.patterns.listener;
+package ru.ubrr.pr.listener;
 
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
