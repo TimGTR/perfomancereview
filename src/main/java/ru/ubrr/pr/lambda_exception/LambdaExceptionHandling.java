@@ -2,6 +2,9 @@ package ru.ubrr.pr.lambda_exception;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Consumer;
+
+import static ru.ubrr.pr.lambda_exception.LambdaWrapper.lambdaWrapper;
 
 public class LambdaExceptionHandling {
     public static void main(String[] args) {
@@ -15,5 +18,11 @@ public class LambdaExceptionHandling {
                 System.err.println("Error parsing number: " + number);
             }
         });
+
+
+        numbers.forEach(lambdaWrapper(i ->
+                System.out.println("Parsed number: " + Integer.parseInt(i))
+        ));
+
     }
 }
