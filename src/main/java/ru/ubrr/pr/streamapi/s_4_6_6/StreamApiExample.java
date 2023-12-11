@@ -1,11 +1,9 @@
 package ru.ubrr.pr.streamapi.s_4_6_6;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class StreamApiExample {
     List<String> list = Arrays.asList("apple", "banana", "orange", "grape");
