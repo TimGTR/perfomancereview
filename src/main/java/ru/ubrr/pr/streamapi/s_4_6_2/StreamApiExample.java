@@ -20,7 +20,7 @@ public class StreamApiExample {
 
         String filePath = "path/to/your/file.txt";
         try (Stream<String> linesStream = Files.lines(Paths.get(filePath))) {
-            linesStream.forEach(System.out::println); // Выводим содержимое файла на экран
+            linesStream.forEach(System.out::println);
         } catch (IOException e) {
             e.printStackTrace();
         }
