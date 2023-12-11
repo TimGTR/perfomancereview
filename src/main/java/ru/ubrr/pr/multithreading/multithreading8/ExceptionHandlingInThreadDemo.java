@@ -1,7 +1,7 @@
 package ru.ubrr.pr.multithreading.multithreading8;
 
 public class ExceptionHandlingInThreadDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(() -> {
             try {
                 int result = 10 / 0;
@@ -10,6 +10,7 @@ public class ExceptionHandlingInThreadDemo {
             }
         });
         thread.start();
+        Thread.sleep(1000);
+        System.out.println(Thread.currentThread().getName());
     }
 }
-
