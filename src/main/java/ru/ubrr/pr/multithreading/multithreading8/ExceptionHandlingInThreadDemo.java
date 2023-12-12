@@ -14,4 +14,3 @@ public class ExceptionHandlingInThreadDemo {
         System.out.println(Thread.currentThread().getName());
     }
 }
-
