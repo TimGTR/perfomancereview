@@ -1,17 +1,15 @@
 package ru.ubrr.pr.listener;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
 
 @Component
 class EventPublisher {
-    private final AnnotationConfigApplicationContext context;
-
-    public EventPublisher(AnnotationConfigApplicationContext context) {
-        this.context = context;
-    }
+    @Autowired
+    private ApplicationEventPublisher applicationEventPublisher;
 
     public void publishCustomEvent(String message) {
-        context.publishEvent(new CustomEvent(this, message));
+        applicationEventPublisher.publishEvent(new CustomEvent(this, message));
     }
 }
