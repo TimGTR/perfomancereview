@@ -1,5 +1,4 @@
 package ru.ubrr.pr.heapdump;
-import java.util.Arrays;
 import java.util.List;
 
 public class HeapDump {
