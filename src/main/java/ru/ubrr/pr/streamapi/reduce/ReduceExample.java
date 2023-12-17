@@ -1,4 +1,4 @@
-package ru.ubrr.pr.reduce;
+package ru.ubrr.pr.streamapi.reduce;
 
 import java.util.Arrays;
 import java.util.List;
