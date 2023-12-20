@@ -26,5 +26,11 @@ public class ReduceExample {
         int product = numbers.stream()
                 .reduce(1, (a, b) -> a * b);
         System.out.println("Произведение чисел: " + product);
+
+        int length = Arrays.asList("one", "two","three","four")
+                .parallelStream()
+                .reduce(0,
+                        (accumulatedInt, str) -> accumulatedInt + str.length(),
+                        (accumulatedInt, accumulatedInt2) -> accumulatedInt + accumulatedInt2);
     }
 }
