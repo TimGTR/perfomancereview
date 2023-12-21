@@ -10,7 +10,7 @@ import ru.ubrr.pr.hibernate.service.ServiceDemo;
 public class DemoController {
     private final ServiceDemo serviceDemo;
     @GetMapping("/demo")
-    void demo() {
+    void demo() throws InterruptedException {
         serviceDemo.demo();
     }
 }
