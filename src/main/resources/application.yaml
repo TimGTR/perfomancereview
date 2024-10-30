@@ -8,11 +8,11 @@ spring:
     hibernate:
       ddl-auto: update
     open-in-view: false
-logging:
-  level:
-    org:
-      hibernate:
-        SQL: debug
-        type:
-          descriptor:
-            sql: trace
+    logging:
+      level:
+        org:
+          hibernate:
+            SQL: debug
+            type:
+              descriptor:
+                sql: trace

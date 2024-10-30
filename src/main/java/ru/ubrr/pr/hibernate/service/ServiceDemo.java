@@ -1,33 +1,35 @@
 package ru.ubrr.pr.hibernate.service;
 
-import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
-import lombok.ToString;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import ru.ubrr.pr.hibernate.domain.Comment;
 import ru.ubrr.pr.hibernate.domain.Post;
 import ru.ubrr.pr.hibernate.repo.PostRepo;
-import org.hibernate.Hibernate;
 
 import java.util.List;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
 public class ServiceDemo {
     private final PostRepo postRepo;
 
-    @Transactional
-    public void demo() throws InterruptedException {
-        Post postLazy = postRepo.findById(1L).orElseThrow();
-        System.out.println("Post title: " + postLazy.getTitle());
+    public void demo() {
+        Post post = new Post();
+        post.setId(1L);
+        post.setTitle("1post");
+        postRepo.save(post);
 
-        boolean isCommentsInitialized = Hibernate.isInitialized(postLazy.getComments());
-        System.out.println("Comments initialized: " + isCommentsInitialized);
+        Post postLazy = postRepo.findById(1L).orElseThrow();
+        log.info("Post title: " + postLazy.getTitle());
+
+        postRepo.deleteAll();
+
         List<Comment> commentsLazy = postLazy.getComments();
 
         if (commentsLazy != null) {
-            System.out.println("Количество комментов " + commentsLazy.size());
+            log.info("Количество комментов " + commentsLazy.size());
         }
     }
-
 }
